@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            @Html.ActionLink("Home", "Index", "Blog", null, new { @class = "actionlink" }) |
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Admin", "Index", "Admin", null, new { @class = "actionlink" })
+                }
+            }
+        </nav>
+        <div id="auth">
+            @if (User.Identity.IsAuthenticated)
+            {
+                @Html.ActionLink("Logout", "Logout", "Blog", null, new { @class = "actionlink" })
+            }
+            else
+            {
+                <p>
+                    @Html.ActionLink("Login", "Login", "Blog", null, new { @class = "actionlink" }) |
+                    @Html.ActionLink("Register", "CreateUser", "Blog", null, new { @class = "actionlink" })
+                </p>
+            }
+        </div>
+    </header>
+
+    <content>
+        @RenderBody()
+    </content>
+
+    @RenderSection("Scripts", false)
+</body>
+</html>

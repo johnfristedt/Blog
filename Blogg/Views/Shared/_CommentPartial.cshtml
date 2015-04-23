@@ -1,0 +1,38 @@
+﻿@model Blogg.Models.CommentViewModel
+
+@{
+    ViewBag.Title = "_CommentPartial";
+}
+
+<h2>_CommentPartial</h2>
+
+<div>
+    <h4>CommentViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Conent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Conent)
+        </dd>
+
+    </dl>
+</div>

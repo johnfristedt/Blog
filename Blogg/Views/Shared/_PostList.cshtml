@@ -1,0 +1,6 @@
+﻿@model IEnumerable<Blogg.Models.PostListViewModel>
+
+@foreach (var item in Model)
+{
+    @Html.Partial("_PostPartial", item)
+}

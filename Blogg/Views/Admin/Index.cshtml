@@ -1,0 +1,9 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Admin</h2>
+
+@Html.ActionLink("New post", "CreatePost", "Admin", new { @class = "actionlink" }) <br />
+@Html.ActionLink("Error log", "Log", "Admin", new { @class = "actionlink" })

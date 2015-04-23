@@ -1,0 +1,10 @@
+﻿.editor-field textarea
+{
+    width: 400px;
+    height: 200px;
+}
+
+.hidden
+{
+    display: none;
+}
