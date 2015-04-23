@@ -19,7 +19,8 @@ namespace Blogg
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
 
             Mapper.CreateMap<Post, PostListViewModel>();
-            Mapper.CreateMap<Post, PostPageViewModel>();
+            Mapper.CreateMap<Post, PostPageViewModel>()
+                .ForMember(vm => vm.PostId, em => em.MapFrom(p => p.Id));
             Mapper.CreateMap<CreatePostViewModel, Post>();
             Mapper.CreateMap<Error, LogViewModel>();
             Mapper.CreateMap<Comment, CommentViewModel>();

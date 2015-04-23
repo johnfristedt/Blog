@@ -13,14 +13,15 @@ $('#moreposts').click(function () {
 });
 
 $('#post-comment').click(function () {
-    console.log('click');
+    $('.static-parameter').prop('disabled', false);
     $.post(
         '/Blog/PostComment',
-        { content: $('#content').text }
+        $('#comment-form').serialize()
     )
     .done(function (data) {
         console.log('Comment uploaded');
     });
+    $('.static-parameter').prop('disabled', true);
 });
 
-document.querySelector('#commentauthor').disabled = true;
+$('.static-parameter').prop('disabled', true);
